@@ -1,11 +1,10 @@
 const inquirer = require('inquirer');
-const  Manager = require('./lib/Manager');
+const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer')
 const Intern = require('./lib/Intern')
 const generateSite = require('./src/generate-site');
 const fs = require('fs');
 const path = require('path');
-const Employee = require('./lib/Employee');
 const OUTPUUT_DIR = path.resolve(__dirname, "output")
 const outputPath = path.join(OUTPUUT_DIR, "team.html");
 const teamMembers = [];
@@ -157,7 +156,7 @@ const prompEngineer = () => {
         }
     ]).then(answers => {
         console.log(answers);
-        const engineer = new Engineer(answers.name, answers.employeeId, answers.email, answers.githubUserName);
+        const engineer = new Engineer(answers.name, answers.employeeId, answers.email, answers.github);
         teamMembers.push(engineer);
         prompMenu();
     })
@@ -226,7 +225,7 @@ const prompIntern = () => {
         }
     ]).then(answers => {
         console.log(answers);
-        const intern = new Intern(answers.name, answers.employeeId, answers.email, answers.schoolName);
+        const intern = new Intern(answers.name, answers.employeeId, answers.email, answers.school);
         teamMembers.push(intern);
         prompMenu();
     })

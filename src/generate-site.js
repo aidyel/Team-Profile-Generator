@@ -10,19 +10,19 @@ const generateSite = (teamMembers) => {
         <div class="card bg-primary mb-3" style="width: 18rem;">
         <div class="card-body">
            
-            <h5 class="card-title text-white"><i class="fa-solid fa-mug"></i>
+            <h5 class="card-title text-white"><i class="fa-solid fa-mug-hot"></i>
             ${manager.name}
             </h5>            
             </div>
 
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"> ID: ${manager.id}</li>
-                <li class="list-group-item"> Email: <span id="email"><a href='#'>${manager.email}</a></span></li>
+                <li class="list-group-item"> Email: <span id="email"><a href='mailto:${manager.email}'>${manager.email}</a></span></li>
                 <li class="list-group-item">Office number: ${manager.officeNumber}</li>
             </ul>
          </div>
          </div>
-         </div>
+
         `;
         htmlPage.push(managerHtml);
     }; 
@@ -39,13 +39,13 @@ const generateSite = (teamMembers) => {
     
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: ${engineer.id}</li>
-                <li class="list-group-item">Email: <span id="email"><a href='#'> ${engineer.email}</a></span></li>
-                <li class="list-group-item">GitHub: <span id="gitHub"><a href='#'> ${engineer.github}</a></span></li>
+                <li class="list-group-item">Email: <span id="email"><a href='mailto:${engineer.email}'> ${engineer.email}</a></span></li>
+                <li class="list-group-item">GitHub Username: <a target="_blank" href='https://github.com/${engineer.github}'> ${engineer.github}</a></li>
             </ul>
     
             </div>
             </div>
-            </div>
+  
         `;
         htmlPage.push(engineerHtml);
     
@@ -63,12 +63,11 @@ const generateSite = (teamMembers) => {
     
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID:${intern.id}</li>
-                <li class="list-group-item">Email: <span id="email"><a href='#'>${intern.email}</a></span></li>
+                <li class="list-group-item">Email: <span id="email"><a href='mailto:${intern.email}'>${intern.email}</a></span></li>
                 <li class="list-group-item">School: ${intern.school}</li>
             </ul>
             </div>
-            </div>
-            </div>
+
         `;
         htmlPage.push(internHtml);
     
